@@ -3,7 +3,13 @@ updates:
   # Maintain dependencies for GitHub Actions
   - package-ecosystem: "github-actions"
     directory: "/"
+    cooldown:
+      default-days: 7
     schedule:
       interval: "monthly"
-    cooldown:
-      default-days: 
+    groups:
+      action-dependencies:
+        applies-to: version-updates
+        update-types:
+          - "minor"
+          - "patch"
